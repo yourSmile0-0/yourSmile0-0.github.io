@@ -223,18 +223,24 @@
   <script src="js/bootstrap.js"></script>
 </body>
   <script>
+    var scrollTop = 0;
+    window.onscroll = function() {
+      scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    }
     var time = null;
     function topHead() {
       time = setInterval(function(){
-        var scroll = $(window).scrollTop();
-          if(scroll > 0 ){
-            scroll -= 50;
-            $(window).scrollTop(scroll);
+          if(scrollTop > 0 ){
+            scrollTop -= 50;
+            $(window).scrollTop(scrollTop);
           }else{
             $(window).scrollTop(0);
             clearInterval(time);
           }
         },10);
+      $('#up').animate({
+        top:'-30'
+      },100);
     }
     $("#up").mouseover(function(){
       console.log('mover');
