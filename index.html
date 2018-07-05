@@ -116,28 +116,28 @@
     </div>
   </nav>
   <section class="main-banner">
-    <img src="img/banner01.png" alt="banner" class="img-responsive">
+    <img alt="banner" class="img-responsive" src="img/banner01.png">
   </section>
   <section class="main-content">
     <div class="container">
       <div class="recommend row">
         <div class="recommend-list col-xs-4">
           <div class="reommend-icon">
-            <img src="img/icon03.png">
+            <img src="img/icon03.jpg">
           </div>
           <div class="reommend-title avtive">公司介绍</div>
           <p class="recommend-text avtive">Company introduction</p>
         </div>
         <div class="recommend-list col-xs-4">
           <div class="reommend-icon">
-            <img src="img/icon02.png">
+            <img src="img/icon02.jpg">
           </div>
           <div class="reommend-title">品质保证</div>
           <p class="recommend-text">Company introduction</p>
         </div>
         <div class="recommend-list col-xs-4">
           <div class="reommend-icon">
-            <img src="img/icon01.png">
+            <img src="img/icon01.jpg">
           </div>
           <div class="reommend-title">环保理念</div>
           <p class="recommend-text">Company introduction</p>
@@ -216,11 +216,23 @@
         </div>
       </div>
     </div>
-    <a class="up" href="#header">^</a>
+    <a class="up" onclick="topHead()">^</a>
   </footer>
   <div class="copyright"></div>
   <script src="js/jquery-1.11.3.js"></script>
   <script src="js/bootstrap.js"></script>
 </body>
-
+  <script>
+    var time = null;
+    function topHead() {
+      time = setInterval(function(){
+          if(document.documentElement.scrollTop > 0 ){
+            document.documentElement.scrollTop -= 50;
+          }else{
+           document.documentElement.scrollTop = 0;
+            clearInterval(time);
+          }
+        },10);
+    }
+  </script>
 </html>
