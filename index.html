@@ -226,12 +226,12 @@
     var time = null;
     function topHead() {
       time = setInterval(function(){
-        var scroll = $('html').scrollTop();
+        var scroll = $(window).scrollTop();
           if(scroll > 0 ){
             scroll -= 50;
-            $('html').scrollTop(scroll);
+            $(window).scrollTop(scroll);
           }else{
-            $('html').scrollTop(0);
+            $(window).scrollTop(0);
             clearInterval(time);
           }
         },10);
