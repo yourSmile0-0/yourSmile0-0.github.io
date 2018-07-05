@@ -3801,11 +3801,9 @@ li {
 }
 .main-navbar .menu .presentation a:hover h4 {
   color: #043e97;
-  font-weight: 700;
 }
 .main-navbar .menu .presentation a:hover h6 {
   color: #043e97;
-  font-weight: 700;
 }
 @media screen and (max-width: 767px) {
   .main-navbar .menu .presentation {
@@ -3933,7 +3931,7 @@ li {
   line-height: 100px;
   text-align: center;
 }
-.footer .up {
+.footer #up {
   position: absolute;
   display: block;
   top: -30px;
@@ -3946,8 +3944,13 @@ li {
   font-size: 30px;
   color: #fff;
   text-decoration: none;
-}
-.footer .up:hover {
-  transition: all 0.2s ease;
-  top: -70px;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
 }
