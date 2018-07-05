@@ -216,7 +216,7 @@
         </div>
       </div>
     </div>
-    <a class="up" onclick="topHead()">^</a>
+    <a id="up" onclick="topHead()">^</a>
   </footer>
   <div class="copyright"></div>
   <script src="js/jquery-1.11.3.js"></script>
@@ -226,13 +226,25 @@
     var time = null;
     function topHead() {
       time = setInterval(function(){
-          if(document.documentElement.scrollTop > 0 ){
-            document.documentElement.scrollTop -= 50;
+        var scroll = $('html').scrollTop();
+          if(scroll > 0 ){
+            scroll -= 50;
+            $('html').scrollTop(scroll);
           }else{
-           document.documentElement.scrollTop = 0;
+            $('html').scrollTop(0);
             clearInterval(time);
           }
         },10);
     }
+    $("#up").mouseover(function(){
+      console.log('mover');
+      $('#up').animate({
+        top:'-60'
+      },100);
+    }).mouseout(function(){
+      $('#up').animate({
+        top:'-30'
+      },100);
+    });
   </script>
 </html>
